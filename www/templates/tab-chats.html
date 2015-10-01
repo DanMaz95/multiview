@@ -1,0 +1,24 @@
+<ion-view view-title="Chats">
+  <ion-content>
+    <div class="todo-wrapper" ng-controller="TodoCtrl">
+                    <h2>this is my filler</h2>
+                        <ul>
+                            <li ng-repeat="todo in todos">
+                                <input type="checkbox" ng-model="todo.done"/>
+                                <span class="done-{{todo.done}}">{{todo.text}}</span>
+                                
+                            </li>
+                            
+                        </ul>
+                    
+                    <form>
+                        <input class="add-input" placeholder="ToDo item" type="text" ng-model="formTodoText" ng-model-instant />
+                        <button class="add-btn" ng-click="add()"><h2>Add</h2></button>
+                        
+                    </form>
+                    
+                    <button class="clear-btn" ng-click="clear()">Clear completed</button>
+                    
+                </div>
+  </ion-content>
+</ion-view>
