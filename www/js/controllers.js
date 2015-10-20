@@ -1,6 +1,32 @@
 angular.module('starter.controllers', [])
 
-.controller('TodoCtrl', function($scope) {})
+.controller('TodoCtrl', function($scope) {
+    
+        $scope.todos = [
+        {text:'Learn to fly', done:false},         
+        {text: 'Get a Waffle', done:false}
+      
+    ];
+  
+    $scope.total = function () {
+        return $scope.todos.length;
+      
+    };
+  
+  
+    $scope.add = function () {
+        $scope.todos.push({text:$scope.formTodoText, done:false});
+        $scope.formTodoText = '';
+      
+    };
+  
+    $scope.clear = function () {
+        $scope.todos = _.filter($scope.todos, function(todo){
+            return !todo.done;
+            
+        });
+    };
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
